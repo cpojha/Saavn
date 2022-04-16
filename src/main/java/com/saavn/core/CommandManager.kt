@@ -8,13 +8,14 @@ import net.dv8tion.jda.api.JDA
 import org.jetbrains.annotations.Nullable
 
 // Importing Commands
-import com.saavn.commands.info.PingCommand
+import com.saavn.commands.info.*
 
 class CommandManager(bot: SaavnDna, jda: JDA) {
     var commands: MutableList<CommandBase> = ArrayList<CommandBase>();
 
     init {
         this.addCommand(PingCommand(jda))
+        this.addCommand(InviteCommand(jda))
     }
 
     fun addCommand(cmd: CommandBase) {

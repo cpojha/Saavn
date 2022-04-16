@@ -23,7 +23,7 @@ public class SaavnDna {
         JDA jda = JDABuilder.createLight(Config.Companion.get("discord_bot_token"), Arrays.asList(INTENTS))
                 .disableCache(CacheFlag.ACTIVITY, CacheFlag.CLIENT_STATUS, CacheFlag.EMOTE, CacheFlag.ONLINE_STATUS)
                 .enableCache(CacheFlag.MEMBER_OVERRIDES, CacheFlag.VOICE_STATE)
-                .setActivity(Activity.listening("music | s!help"))
+                .setActivity(Activity.listening("music | /help"))
                 .addEventListeners(new EventListener(this))
                 .build();
 
