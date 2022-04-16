@@ -1,7 +1,7 @@
 package com.saavn.commandmeta;
 
 import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteraction;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 
 public abstract class CommandBase {
     public JDA jda;
@@ -9,7 +9,7 @@ public abstract class CommandBase {
     public String help;
     public String name;
 
-    public CommandBase(JDA jda) {
+    public CommandBase(JDA jda, String name, String help, String category) {
         this.jda = jda;
         this.name = name;
         this.help = help;
