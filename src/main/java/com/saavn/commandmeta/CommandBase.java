@@ -2,12 +2,21 @@ package com.saavn.commandmeta;
 
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
+import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 
 public abstract class CommandBase {
     public JDA jda;
     public String category;
     public String help;
     public String name;
+    public OptionData[] options;
+
+    public CommandBase(JDA jda, String name, String help, String category, OptionData[] options) {
+        this.jda = jda;
+        this.name = name;
+        this.help = help;
+        this.options = options;
+    }
 
     public CommandBase(JDA jda, String name, String help, String category) {
         this.jda = jda;

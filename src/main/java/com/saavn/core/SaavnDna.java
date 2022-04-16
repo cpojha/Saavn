@@ -12,17 +12,18 @@ import com.saavn.Config;
 import com.saavn.core.CommandManager;
 import com.saavn.core.EventListener;
 import java.util.Arrays;
+import java.util.EnumSet;
 
 public class SaavnDna {
-    public final static GatewayIntent[] INTENTS = {GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_VOICE_STATES};
+    public final static GatewayIntent[] INTENTS = {GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_VOICE_STATES, GatewayIntent.GUILD_MEMBERS};
 
     public JDA jda;
     public CommandManager commandManager;
 
     public SaavnDna() throws LoginException {
-        JDA jda = JDABuilder.createLight(Config.Companion.get("discord_bot_token"), Arrays.asList(INTENTS))
-                .disableCache(CacheFlag.ACTIVITY, CacheFlag.CLIENT_STATUS, CacheFlag.EMOTE, CacheFlag.ONLINE_STATUS)
-                .enableCache(CacheFlag.MEMBER_OVERRIDES, CacheFlag.VOICE_STATE)
+        JDA jda = JDABuilder.createDefault(Config.Companion.get("discord_bot_token"), Arrays.asList(INTENTS))
+                .disableCache(EnumSet.of(CacheFlag.ACTIVITY, CacheFlag.CLIENT_STATUS, CacheFlag.EMOTE, CacheFlag.ONLINE_STATUS))
+                .enableCache(CacheFlag.VOICE_STATE)
                 .setActivity(Activity.listening("music | /help"))
                 .addEventListeners(new EventListener(this))
                 .build();

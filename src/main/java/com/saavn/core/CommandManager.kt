@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Nullable
 
 // Importing Commands
 import com.saavn.commands.info.*
+import com.saavn.commands.music.*
 
 class CommandManager(bot: SaavnDna, jda: JDA) {
     var commands: MutableList<CommandBase> = ArrayList<CommandBase>();
@@ -16,6 +17,7 @@ class CommandManager(bot: SaavnDna, jda: JDA) {
     init {
         this.addCommand(PingCommand(jda))
         this.addCommand(InviteCommand(jda))
+        this.addCommand(JoinCommand(jda))
     }
 
     fun addCommand(cmd: CommandBase) {
