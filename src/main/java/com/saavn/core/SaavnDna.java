@@ -2,6 +2,7 @@ package com.saavn.core;
 
 import com.saavn.commandmeta.CommandBase;
 import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
 import net.dv8tion.jda.api.entities.Activity;
@@ -33,7 +34,11 @@ public class SaavnDna {
         this.commandManager = new CommandManager(this, this.getJDA());
 
         for (CommandBase cmd : this.commandManager.getCommands()) {
-            jda.upsertCommand(cmd.getName(), cmd.getHelp()).queue();
+            if (cmd.options.length == 0) {
+                jda.upsertCommand(cmd.getName(), cmd.getHelp()).queue();
+            } else {
+                jda.upsertCommand(cmd.getName(), cmd.getHelp()).addOptions(cmd.options).queue();
+            }
         }
     }
 
