@@ -22,10 +22,10 @@ public class SongSelector {
             counter++;
         }
 
-        components.add(Button.secondary("MUSIC:" + audioTracks.get(0).getInfo().title.substring(0, Math.min(audioTracks.get(0).getInfo().title.length(), 25)), "1"));
-        components.add(Button.secondary("MUSIC:" + audioTracks.get(1).getInfo().title.substring(0, Math.min(audioTracks.get(0).getInfo().title.length(), 25)), "2"));
-        components.add(Button.secondary("MUSIC:" + audioTracks.get(2).getInfo().title.substring(0, Math.min(audioTracks.get(0).getInfo().title.length(), 25)), "3"));
-        components.add(Button.secondary("MUSIC:" + audioTracks.get(3).getInfo().title.substring(0, Math.min(audioTracks.get(0).getInfo().title.length(), 25)), "4"));
-        components.add(Button.secondary("MUSIC:" + audioTracks.get(4).getInfo().title.substring(0, Math.min(audioTracks.get(0).getInfo().title.length(), 25)), "5"));
+        components.add(Button.secondary("MUSIC:" + audioTracks.get(0).getInfo().title.substring(0, Math.min(audioTracks.get(0).getInfo().title.length(), 25)) + "1", "1"));
+        components.add(Button.secondary("MUSIC:" + audioTracks.get(1).getInfo().title.substring(0, Math.min(audioTracks.get(0).getInfo().title.length(), 25)) + "2", "2"));
+        components.add(Button.secondary("MUSIC:" + audioTracks.get(2).getInfo().title.substring(0, Math.min(audioTracks.get(0).getInfo().title.length(), 25)) + "3", "3"));
+        components.add(Button.secondary("MUSIC:" + audioTracks.get(3).getInfo().title.substring(0, Math.min(audioTracks.get(0).getInfo().title.length(), 25)) + "4", "4"));
+        components.add(Button.secondary("MUSIC:" + audioTracks.get(4).getInfo().title.substring(0, Math.min(audioTracks.get(0).getInfo().title.length(), 25)) + "5", "5"));
     }
 }

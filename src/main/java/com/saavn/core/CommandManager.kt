@@ -19,6 +19,8 @@ class CommandManager(bot: SaavnDna, jda: JDA) {
         this.addCommand(InviteCommand(jda))
         this.addCommand(JoinCommand(jda))
         this.addCommand(PlayCommand(jda))
+        this.addCommand(StopCommand(jda))
+        this.addCommand(SkipCommand(jda))
     }
 
     private fun addCommand(cmd: CommandBase) {

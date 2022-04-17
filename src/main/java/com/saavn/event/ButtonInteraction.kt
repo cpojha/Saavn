@@ -26,12 +26,12 @@ class ButtonInteraction(event: ButtonInteractionEvent) {
 
                 override fun playlistLoaded(playlist: AudioPlaylist?) {
                     val track = playlist?.tracks?.get(0)
-                    event.deferReply().setContent("**Added to queue**: " + track?.info?.title).queue()
+                    event.deferReply().setContent("**Added to queue**: " + track?.info?.title + " - **Requested by:** " + event.member!!.asMention).queue()
                     musicManager.scheduler.queue(track)
                 }
 
                 override fun trackLoaded(track: AudioTrack?) {
-                    event.deferReply().setContent("**Added to queue**: " + track?.info?.title).queue()
+                    event.deferReply().setContent("**Added to queue**: " + track?.info?.title + " - **Requested by:** " + event.member!!.asMention).queue()
                     musicManager.scheduler.queue(track)
                 }
             })
