@@ -21,7 +21,7 @@ class CommandManager(bot: SaavnDna, jda: JDA) {
         this.addCommand(PlayCommand(jda))
     }
 
-    fun addCommand(cmd: CommandBase) {
+    private fun addCommand(cmd: CommandBase) {
         this.commands.add(cmd);
     }
 

@@ -4,14 +4,17 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 
+import java.util.Collection;
+import java.util.List;
+
 public abstract class CommandBase {
     public JDA jda;
     public String category;
     public String help;
     public String name;
-    public OptionData[] options;
+    public Collection<OptionData> options;
 
-    public CommandBase(JDA jda, String name, String help, String category, OptionData[] options) {
+    public CommandBase(JDA jda, String name, String help, String category, Collection<OptionData> options) {
         this.jda = jda;
         this.name = name;
         this.help = help;

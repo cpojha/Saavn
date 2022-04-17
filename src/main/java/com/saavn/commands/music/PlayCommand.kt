@@ -17,9 +17,10 @@ class PlayCommand(jda: JDA) :
         "play",
         "Play music from a given URL or search for a track",
         "Music",
-        arrayOf(OptionData(OptionType.STRING, "input", "A search term or a link", true))) {
+        listOf<OptionData>(OptionData(OptionType.STRING, "input", "A search term or a link", true))
+    ) {
 
-    fun isUrl(url: String) : Boolean {
+    private fun isUrl(url: String) : Boolean {
         try {
             URI(url);
             return true;
@@ -41,17 +42,19 @@ class PlayCommand(jda: JDA) :
         }
 
         if (!selfVoiceState!!.inAudioChannel() || !memVoiceState.channel!!.equals(selfVoiceState.channel)) {
-            val audioManager = event!!.guild!!.audioManager
-            val voiceChannel: AudioChannel? = mem!!.getVoiceState()!!.getChannel()
+            val audioManager = event.guild!!.audioManager
+            val voiceChannel: AudioChannel? = mem.getVoiceState()!!.getChannel()
 
             audioManager.openAudioConnection(voiceChannel)
         }
 
         var link: String = event.getOption("input")!!.asString
 
-        if (!isUrl(link)) {
+        if (!link.startsWith("https://")) {
             link = "ytsearch:$link"
         }
+
+        println(link)
 
         PlayerManager.getInstance().loadAndPlay(event, link)
     }

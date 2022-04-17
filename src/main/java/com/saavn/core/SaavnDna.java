@@ -34,7 +34,7 @@ public class SaavnDna {
         this.commandManager = new CommandManager(this, this.getJDA());
 
         for (CommandBase cmd : this.commandManager.getCommands()) {
-            if (cmd.options.length == 0) {
+            if (cmd.options == null || cmd.options.size() == 0) {
                 jda.upsertCommand(cmd.getName(), cmd.getHelp()).queue();
             } else {
                 jda.upsertCommand(cmd.getName(), cmd.getHelp()).addOptions(cmd.options).queue();
