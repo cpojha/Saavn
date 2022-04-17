@@ -10,6 +10,7 @@ import com.sedmelluq.discord.lavaplayer.track.AudioPlaylist;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
+import com.saavn.util.SongSelector;
 
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +20,7 @@ public class PlayerManager {
     private static PlayerManager INSTANCE;
 
     private final Map<Long, GuildMusicManager> musicManagers;
-    private final AudioPlayerManager audioPlayerManager;
+    public final AudioPlayerManager audioPlayerManager;
 
     public PlayerManager() {
         this.musicManagers = new HashMap<>();
@@ -50,16 +51,10 @@ public class PlayerManager {
             @Override
             public void playlistLoaded(AudioPlaylist playlist) {
                 final List<AudioTrack> tracks = playlist.getTracks();
-                event.deferReply().setContent("Adding to queue:\n**` Loaded "
-                        + String.valueOf(tracks.size())
-                        + " tracks from playlist "
-                        + playlist.getName()
-                        + "`**")
-                        .queue();
+                System.out.println(tracks.size());
+                SongSelector songMenu = new SongSelector(tracks, event.getGuild().getIdLong());
 
-                for (final AudioTrack track : tracks) {
-                    musicManager.getScheduler().queue(track);
-                }
+                event.deferReply().setContent(songMenu.content).addActionRow(songMenu.components).queue();
             }
 
             @Override

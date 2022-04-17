@@ -54,8 +54,6 @@ class PlayCommand(jda: JDA) :
             link = "ytsearch:$link"
         }
 
-        println(link)
-
         PlayerManager.getInstance().loadAndPlay(event, link)
     }
 }
