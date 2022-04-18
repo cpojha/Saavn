@@ -15,23 +15,23 @@ class ButtonInteraction(event: ButtonInteractionEvent) {
             PlayerManager.getInstance().audioPlayerManager.loadItem(songName, object: AudioLoadResultHandler {
                 var musicManager = PlayerManager.getInstance().getMusicManager(event.getGuild());
                 override fun loadFailed(exception: FriendlyException?) {
-                    event.deferReply().setContent("Unable to load that track.").queue()
+                    event.deferEdit().setContent("Unable to load that track.").setActionRows().queue()
                     return
                 }
 
                 override fun noMatches() {
-                    event.deferReply().setContent("Something went wrong while finding a matching track.").queue()
+                    event.deferEdit().setContent("Something went wrong while finding a matching track.").setActionRows().queue()
                     return
                 }
 
                 override fun playlistLoaded(playlist: AudioPlaylist?) {
                     val track = playlist?.tracks?.get(0)
-                    event.deferReply().setContent("**Added to queue**: " + track?.info?.title + " - **Requested by:** " + event.member!!.asMention).queue()
+                    event.deferEdit().setContent("**Added to queue**: " + track?.info?.title + " - **Requested by:** " + event.member!!.asMention).setActionRows().queue()
                     musicManager.scheduler.queue(track)
                 }
 
                 override fun trackLoaded(track: AudioTrack?) {
-                    event.deferReply().setContent("**Added to queue**: " + track?.info?.title + " - **Requested by:** " + event.member!!.asMention).queue()
+                    event.deferEdit().setActionRows().setContent("**Added to queue**: " + track?.info?.title + " - **Requested by:** " + event.member!!.asMention).queue()
                     musicManager.scheduler.queue(track)
                 }
             })
