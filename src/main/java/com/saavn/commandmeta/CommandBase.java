@@ -18,6 +18,7 @@ public abstract class CommandBase {
         this.jda = jda;
         this.name = name;
         this.help = help;
+        this.category = category;
         this.options = options;
     }
 
@@ -25,6 +26,7 @@ public abstract class CommandBase {
         this.jda = jda;
         this.name = name;
         this.help = help;
+        this.category = category;
     }
 
     public void setCategory(String categoryName) {

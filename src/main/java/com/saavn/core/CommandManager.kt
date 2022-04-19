@@ -4,6 +4,7 @@ import com.saavn.core.SaavnDna
 import kotlin.collections.ArrayList
 import kotlin.collections.MutableList
 import com.saavn.commandmeta.CommandBase
+import com.saavn.commandmeta.HelpCommand
 import net.dv8tion.jda.api.JDA
 import org.jetbrains.annotations.Nullable
 
@@ -24,6 +25,10 @@ class CommandManager(bot: SaavnDna, jda: JDA) {
         this.addCommand(RepeatCommand(jda))
         this.addCommand(PauseCommand(jda))
         this.addCommand(ResumeCommand(jda))
+        this.addCommand(VolumeCommand(jda))
+        this.addCommand(QueueCommand(jda))
+
+        this.addCommand(HelpCommand(jda, commands))
     }
 
     private fun addCommand(cmd: CommandBase) {

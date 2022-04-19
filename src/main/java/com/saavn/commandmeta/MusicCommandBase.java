@@ -5,6 +5,7 @@ import com.saavn.audio.PlayerManager;
 import com.saavn.commandmeta.CommandBase;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.GuildVoiceState;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -22,6 +23,10 @@ abstract public class MusicCommandBase extends CommandBase {
     }
 
     abstract public void execute(SlashCommandInteractionEvent event);
+
+    public GuildMusicManager getGuildMusicManager(Guild guild) {
+        return PlayerManager.getInstance().getMusicManager(guild);
+    }
 
     public boolean defaultChecks(SlashCommandInteractionEvent event) {
         final Member selfMember = event.getGuild().getSelfMember();

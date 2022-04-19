@@ -7,7 +7,7 @@ import com.sedmelluq.discord.lavaplayer.tools.FriendlyException
 import com.sedmelluq.discord.lavaplayer.track.AudioPlaylist
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack
 
-class ButtonInteraction(event: ButtonInteractionEvent) {
+class TextButtonInteraction(event: ButtonInteractionEvent) {
     init {
         if (event.componentId.startsWith("MUSIC:")) {
             var songName = "ytsearch:" + event.componentId.replace("MUSIC:", "");
