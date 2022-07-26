@@ -5,7 +5,7 @@
 ![Discord Bot](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)
 
 # Saavn
-The best music bot for your discord server ever existed!
+The best music bot for your discord server ever existed!!
 
 ## Useful links
 Invite me by clicking [here](https://discord.com/api/oauth2/authorize?client_id=964124925382238289&permissions=8&scope=bot) and join my support server [here](https://discord.gg/Zrv9T3uxA3)!
