@@ -51,6 +51,6 @@ public class SkipCommand extends CommandBase {
         musicManager.getScheduler().nextTrack();
         final AudioTrack nextTrack = audioPlayer.getPlayingTrack();
 
-        event.deferReply().setContent("**Skipped to the next track**: " + nextTrack.getInfo().title).queue();
+        event.deferReply().setContent("**✅ | Skipped to the next track**: " + nextTrack.getInfo().title).queue();
     }
 }

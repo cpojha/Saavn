@@ -20,7 +20,7 @@ public class PauseCommand extends CommandBase {
         final GuildVoiceState selfVoiceState = selfMember.getVoiceState();
 
         if (!selfVoiceState.inAudioChannel()) {
-            event.deferReply().setContent("I'm not playing anything currently.").queue();
+            event.deferReply().setContent("❌ | I'm not playing anything currently.").queue();
             return;
         }
 
