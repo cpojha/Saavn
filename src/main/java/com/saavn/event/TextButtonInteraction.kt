@@ -20,7 +20,7 @@ class TextButtonInteraction(event: ButtonInteractionEvent) {
                 }
 
                 override fun noMatches() {
-                    event.deferEdit().setContent("Something went wrong while finding a matching track.").setActionRows().queue()
+                    event.deferEdit().setContent("Something went wrong while finding a track :/").setActionRows().queue()
                     return
                 }
 
