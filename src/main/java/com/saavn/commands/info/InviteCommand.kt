@@ -13,6 +13,6 @@ class InviteCommand(jda: JDA) : CommandBase(jda, "invite", "Invite me in your se
         var invitePermissions = mutableListOf(Permission.MANAGE_CHANNEL, Permission.MANAGE_SERVER, Permission.MESSAGE_MANAGE, Permission.MESSAGE_SEND, Permission.VOICE_CONNECT)
 
         val inviteUrl = applicationInfo.getInviteUrl(invitePermissions)
-        event.reply("Invite link for " + "**" + applicationInfo.name + "**\n" + inviteUrl).queue()
+        event.reply("Invite " + "**" + applicationInfo.name + "** to your server by clicking the link below!\n" + inviteUrl).queue()
     }
 }
