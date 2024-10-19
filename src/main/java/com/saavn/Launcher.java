@@ -1,3 +1,6 @@
+// (C) ShashankKumarSaxena
+// This project is severely outdated!
+// Do NOT use in production!
 package com.saavn;
 
 import com.saavn.core.SaavnDna;
