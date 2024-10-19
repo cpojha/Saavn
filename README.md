@@ -1,3 +1,4 @@
+# This project is discontinued and outdated!
 <img src="https://cdn.discordapp.com/avatars/964124925382238289/853c54675a79ad001125908e9ccf0cda.webp?size=1024" align="right" width=200 height=200>
 
 ![Java](https://img.shields.io/badge/java-%23000000.svg?style=for-the-badge&logo=java&logoColor=orange)
