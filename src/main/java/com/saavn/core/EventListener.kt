@@ -7,6 +7,7 @@ import com.saavn.event.TextButtonInteraction
 import com.saavn.event.SlashCommandInteraction
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent
 
+// .. Listening to events 
 class EventListener(bot: SaavnDna) : ListenerAdapter() {
     var bot: SaavnDna = bot
 
