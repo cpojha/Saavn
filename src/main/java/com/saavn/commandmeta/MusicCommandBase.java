@@ -13,6 +13,7 @@ import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 
 import java.util.Collection;
 
+// Base command class for music commands
 abstract public class MusicCommandBase extends CommandBase {
     public MusicCommandBase(JDA jda, String name, String help, String category) {
         super(jda, name, help, category);
