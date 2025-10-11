@@ -9,6 +9,6 @@ import javax.security.auth.login.LoginException;
 
 public class Launcher {
     public static void main(String args[]) throws LoginException {
-        new SaavnDna();
+        new SaavnDna(); // Startup the bot
     }
 }
