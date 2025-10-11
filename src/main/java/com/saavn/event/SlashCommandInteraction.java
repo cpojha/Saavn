@@ -10,5 +10,6 @@ public class SlashCommandInteraction {
         if (command != null) {
             command.execute(event);
         }
+        // Need a permission manager
     }
 }
