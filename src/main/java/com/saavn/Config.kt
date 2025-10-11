@@ -10,5 +10,6 @@ class Config {
         fun get(key: String) : String? {
             return dotenv.get(key.uppercase())
         }
+        // Make a config verifier 
     }
 }
