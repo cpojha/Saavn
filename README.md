@@ -12,4 +12,4 @@ The best music bot for your discord server ever existed!
 Invite me by clicking [here](https://discord.com/api/oauth2/authorize?client_id=964124925382238289&permissions=8&scope=bot) and join my support server [here](https://discord.gg/Zrv9T3uxA3)!
 
 <!-- ## Statistics
-[![Contributors over time](https://contributor-graph-api.apiseven.com/contributors-svg?chart=contributorOverTime&repo=Naereen/badges)](https://www.apiseven.com/en/contributor-graph?chart=contributorOverTime&repo=Naereen/badges) asdf-->
+[![Contributors over time](https://contributor-graph-api.apiseven.com/contributors-svg?chart=contributorOverTime&repo=Naereen/badges)](https://www.apiseven.com/en/contributor-graph?chart=contributorOverTime&repo=Naereen/badges) -->
